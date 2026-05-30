@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  RetroCam — Python dependency list
+#
+#  Install on desktop (development):
+#    pip install -r requirements.txt
+#
+#  For Android via buildozer, the packages listed in buildozer.spec
+#  [requirements] section take precedence — this file is for desktop dev only.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── UI framework ─────────────────────────────────────────────────────────────
+# Kivy 2.3.1 provides a prebuilt wheel for Python 3.13 on Windows.
+kivy==2.3.1
+kivymd==1.2.0
+
+# ── Computer vision & AR ─────────────────────────────────────────────────────
+opencv-python==4.10.0.84      # camera capture + image processing
+mediapipe==0.10.35            # Face Mesh for eye landmark detection
+numpy>=2.0,<3.0               # array operations (Python 3.13 wheels start at NumPy 2.x)
+
+# ── Image I/O ────────────────────────────────────────────────────────────────
+Pillow>=10.0                  # used for gallery-save helpers (optional)
+
+# ── Android-specific (only needed inside buildozer environment) ───────────────
+# pyjnius     — Java interop for Media Scanner broadcast
+# plyer       — cross-platform file/notification helpers
+# These are declared in buildozer.spec and installed automatically during build.
